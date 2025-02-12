@@ -15,4 +15,5 @@ public class CartItemsDTO{
     private String phoneNumber;
     private boolean availableForRent;
     private byte[] photo;
+    private boolean renting;
 }

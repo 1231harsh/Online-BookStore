@@ -59,12 +59,17 @@ public class CartService {
 
         Optional<CartItems> cartItemsOptional=cartItemsService.getCartItemsByCartAndBook(cart, book);
 
+    if (cartItemsOptional.isPresent()) {
+        CartItems cartItem = cartItemsOptional.get();
+        cartItem.setRenting(isRenting);
+        cartItemsService.save(cartItem);
+    } else {
         CartItems cartItem = new CartItems();
         cartItem.setCart(cart);
         cartItem.setBook(book);
         cartItem.setRenting(isRenting);
-
         cartItemsService.save(cartItem);
+    }
         return true;
     }
 

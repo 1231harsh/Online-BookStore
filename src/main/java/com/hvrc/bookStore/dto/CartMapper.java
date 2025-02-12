@@ -29,6 +29,7 @@ public class CartMapper {
         cartItemsDTO.setPhoneNumber(cartItems.getBook().getPhoneNumber());
         cartItemsDTO.setAvailableForRent(cartItems.getBook().isAvailableForRent());
         cartItemsDTO.setPhoto(cartItems.getBook().getPhoto());
+        cartItemsDTO.setRenting(cartItems.isRenting());
 
         return cartItemsDTO;
     }
